@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header />
+    <Header :title="title" />
     <img alt="Vue logo" src="./assets/logo.png">
     <h1>{{ hello }}</h1>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
@@ -16,6 +16,7 @@ export default {
   data() {
     return {
       hello: 'Hello World',
+      title: 'Vue Movie DB'
     };
   },
   components: {
