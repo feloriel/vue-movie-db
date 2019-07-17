@@ -1,10 +1,15 @@
 <template>
-  <img :src="movie.posterPath" :alt="movie.title" />
+  <img :src="moviePosterPath" :alt="movie.title" />
 </template>
 
 <script>
 export default {
-  props: ['movie']
+  props: ['movie'],
+  computed: {
+    moviePosterPath: function () {
+      return `http://image.tmdb.org/t/p/w185${this.movie.poster_path}`;
+    }
+  }
 }
 </script>
 
