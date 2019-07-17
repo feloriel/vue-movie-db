@@ -1,18 +1,21 @@
 <template>
-  <img :src="moviePosterPath" :alt="movie.title" />
+  <img :src="posterImage" :alt="movie.title" />
 </template>
 
 <script>
+const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 export default {
   props: ['movie'],
   computed: {
-    moviePosterPath: function () {
-      return `http://image.tmdb.org/t/p/w185${this.movie.poster_path}`;
+    posterImage: function() {
+      return `${POSTER_PATH}/${this.movie.poster_path}`;
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
-
+<style scoped>
+img {
+  box-shadow: 0 0 35px black;
+}
 </style>
