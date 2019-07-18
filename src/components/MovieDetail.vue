@@ -24,7 +24,7 @@ export default {
   computed: {
     styles() {
       return {
-        background: `url(${BACKDROP_PATH}/${this.movie.backdrop_path}) no-repeat`
+        backgroundImage: `url(${BACKDROP_PATH}/${this.movie.backdrop_path})`
       }
     }
   },
@@ -32,7 +32,7 @@ export default {
     fetchData: async function() {
       try {
         const res = await fetch(
-          `https://api.themoviedb.org/3/movie/${this.$route.params.id}?api_key=65e043c24785898be00b4abc12fcdaae`
+          `https://api.themoviedb.org/3/movie/${this.$route.params.id}?api_key=41ec87053aad3d57b5bf94fdf89f4086`
         );
         const movie = await res.json();
         this.movie = movie;
@@ -49,6 +49,8 @@ export default {
   position: relative;
   padding-top: 50vh;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .movie-info {
   background: white;
